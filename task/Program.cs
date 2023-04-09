@@ -6,6 +6,7 @@ string[] createArrayStrings = CreateArrayStrings(arraySize);
 PrintArray(createArrayStrings);
 int sizeNewArray = SizeNewArray(createArrayStrings, 3);
 string[] newArrayStringsLessThanOrEqual = NewArrayStringsLessThanOrEqual(createArrayStrings, sizeNewArray);
+Console.Write(" -> ");
 PrintArray(newArrayStringsLessThanOrEqual);
 
 
@@ -28,7 +29,7 @@ void PrintArray(string[] arr)
         if (i < arr.Length - 1) Console.Write($"“{arr[i]}”, ");
         else Console.Write($"“{arr[i]}”");
     }
-    Console.WriteLine("]");
+    Console.Write("]");
 }
 
 int SizeNewArray(string[] str, int numberCharacters)
