@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-10 12:18:49 "/>
+        <attribute name="created" value="VXNlcjtXSU4tNjVONkJLRU9KNlI7MjAyMy0wNC0wOTsiMTE6MTI6MzMgIjsyNjIy"/>
+        <attribute name="edited" value="VXNlcjtXSU4tNjVONkJLRU9KNlI7MjAyMy0wNC0xMDsiMTI6MTg6NDkgIjs1OzI3NDA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="size, i" type="Integer" array="False" size=""/>
+            <input variable="size"/>
+            <declare name="arr" type="String" array="True" size="size"/>
+            <for variable="i" start="0" end="size-1" direction="inc" step="1">
+                <input variable="arr[i]"/>
+            </for>
+            <declare name="numberCharacters, sizeArr, count, y" type="Integer" array="False" size=""/>
+            <assign variable="numberCharacters" expression="3"/>
+            <assign variable="sizeArr" expression="0"/>
+            <assign variable="count" expression="0"/>
+            <for variable="i" start="0" end="size(arr) - 1" direction="inc" step="1">
+                <assign variable="count" expression="0"/>
+                <for variable="y" start="0" end="len(arr[i]) -1" direction="inc" step="1">
+                    <assign variable="count" expression="count + 1"/>
+                </for>
+                <if expression="count &lt;= numberCharacters">
+                    <then>
+                        <assign variable="sizeArr" expression="sizeArr + 1"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <declare name="j" type="Integer" array="False" size=""/>
+            <assign variable="j" expression="0"/>
+            <declare name="newArr" type="String" array="True" size="sizeArr"/>
+            <for variable="i" start="0" end="size(arr) - 1" direction="inc" step="1">
+                <assign variable="count" expression="0"/>
+                <for variable="y" start="0" end="len(arr[i]) -1" direction="inc" step="1">
+                    <assign variable="count" expression="count + 1"/>
+                </for>
+                <if expression="count &lt;= numberCharacters">
+                    <then>
+                        <assign variable="newArr[j]" expression="arr[i]"/>
+                        <assign variable="j" expression="j + 1"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <for variable="i" start="0" end="sizeArr - 1" direction="inc" step="1">
+                <output expression="newArr[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
